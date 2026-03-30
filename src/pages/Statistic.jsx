@@ -58,42 +58,37 @@ export default function Statistic({ chartData, batteryData, regenerateChart, reg
             <RefreshCw className="w-4 h-4" /> New Chart
           </button>
         </div>
-        <div className="w-full h-[300px] flex relative">
-          
-          <div className="w-12 flex flex-col justify-between pb-8 text-xs font-bold text-gray-500 italic shrink-0 z-10 bg-ev-card">
-            <span>120 kW</span><span>60 kW</span><span>0 kW</span>
-          </div>
-          
-          <div className="flex-1 overflow-x-auto overflow-y-hidden ml-2 pb-2 custom-scrollbar">
-            <div className="relative h-full w-full min-w-[600px]">
-              <div className="absolute inset-0 flex flex-col justify-between pb-8 opacity-20 pointer-events-none">
-                <div className="border-t border-gray-400 border-dashed w-full"></div>
-                <div className="border-t border-gray-400 border-dashed w-full"></div>
-                <div className="border-t border-gray-400 w-full"></div>
-              </div>
-              <svg className="absolute inset-0 w-full h-[calc(100%-32px)] overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 100">
-                <path 
-                  d={powerAreaD} 
-                  fill="rgba(132, 204, 22, 0.1)" 
-                  style={{ transition: 'd 0.8s ease-in-out' }}
-                />
-                <path 
-                  d={powerPathD} 
-                  stroke="#84cc16" 
-                  strokeWidth="3" 
-                  fill="none" 
-                  vectorEffect="non-scaling-stroke"
-                  style={{ transition: 'd 0.8s ease-in-out' }}
-                />
-              </svg>
-              
-              <div className="absolute bottom-0 left-0 right-0 flex justify-between text-xs font-bold text-gray-500 italic pr-2">
-                {labels.map((lbl, i) => <span key={i}>{lbl}</span>)}
+          <div className="w-full h-[350px] flex relative">
+            
+            <div className="w-16 flex flex-col justify-between pb-8 text-[10px] md:text-xs font-bold text-gray-500 italic shrink-0 z-10 bg-ev-card">
+              {[120, 90, 60, 30, 0].map(val => (
+                <span key={val} className="text-right pr-2">{val} kW</span>
+              ))}
+            </div>
+            
+            <div className="flex-1 overflow-x-auto overflow-y-hidden ml-2 pb-2 custom-scrollbar">
+              <div className="relative h-full w-full min-w-[700px]">
+                
+                <div className="absolute inset-0 flex flex-col justify-between pb-8 opacity-10 pointer-events-none">
+                  {[120, 90, 60, 30, 0].map((val, i) => (
+                    <div 
+                      key={val} 
+                      className={`w-full ${i === 4 ? 'border-t-2 border-gray-400' : 'border-t border-gray-500 border-dashed'}`}
+                    ></div>
+                  ))}
+                </div>
+
+                <svg className="absolute inset-0 w-full h-[calc(100%-32px)] overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 100">
+                  <path d={powerAreaD} fill="rgba(132, 204, 22, 0.05)" style={{ transition: 'd 0.8s' }} />
+                  <path d={powerPathD} stroke="#84cc16" strokeWidth="3" fill="none" vectorEffect="non-scaling-stroke" style={{ transition: 'd 0.8s' }} />
+                </svg>
+
+                <div className="absolute bottom-0 left-0 right-0 flex justify-between text-[10px] md:text-xs font-bold text-gray-500 italic">
+                  {labels.map((lbl, i) => <span key={i}>{lbl}</span>)}
+                </div>
               </div>
             </div>
           </div>
-
-        </div>
       </div>
       
       <div className="bg-ev-card rounded-2xl p-6 shadow-lg border border-white/5 flex flex-col">
