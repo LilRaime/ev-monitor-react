@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-gray-300 rounded-full; }
+
+@layer base {
+  html, body, #root {
+    @apply h-full w-full overflow-hidden m-0 p-0;
+  }
+
+  html { 
+    background-color: theme('colors.ev.darker'); 
+    font-size: 100%; 
+  }
+
+  @media (min-width: 768px) { 
+    html { font-size: 120%; } 
+  }
+
+  html.light-bg { 
+    background-color: theme('colors.ev.main'); 
+    transition: background-color 0.5s ease; 
+  }
+  html.dark-bg { 
+    background-color: theme('colors.ev.darker'); 
+    transition: background-color 0.5s ease; 
+  }
+  html.no-transition { transition: none !important; }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+  input[type="number"] { -moz-appearance: textfield; }
+}
+
+@layer components {
+  .donut-chart { background: conic-gradient(#84cc16 85%, #181a25 0); }
+}
