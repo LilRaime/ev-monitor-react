@@ -45,5 +45,5 @@ npm run build
   <tr>
     <td><img src="screenshots/mobile3.png" width="300"/></td>
     <td><img src="screenshots/mobile4.png" width="300"/></td>
-      </tr>
+  </tr>
 </table>
