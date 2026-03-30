@@ -37,7 +37,13 @@ npm run build
 
 <table>
   <tr>
-    <td><img src="screenshots/dark_mobile.png" width="300"/></td>
-    <td><img src="screenshots/dark_mobile_menu.png" width="300"/></td>
+    <td><img src="screenshots/mobile1.png" width="300"/></td>
+    <td><img src="screenshots/mobile2.png" width="300"/></td>
   </tr>
+</table>
+<table>
+  <tr>
+    <td><img src="screenshots/mobile3.png" width="300"/></td>
+    <td><img src="screenshots/mobile4.png" width="300"/></td>
+      </tr>
 </table>
