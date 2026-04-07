@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
-export function useCost(chartData, tariff) {
+export function useCost(chartData: number[], tariff: number | string): number {
   return useMemo(() => {
-    const parsedTariff = parseFloat(tariff);
+    const parsedTariff = typeof tariff === 'string' ? parseFloat(tariff) : tariff;
     if (isNaN(parsedTariff) || parsedTariff <= 0) return 0;
     
     const avgPower = chartData.reduce((sum, v) => sum + v, 0) / chartData.length;

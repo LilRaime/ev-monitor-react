@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function ChartCard({ chartData }) {
+export default function ChartCard({ chartData }: { chartData: number[] }) {
   const currentHour = new Date().getHours();
   
   const labels = useMemo(() => {

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { BatteryMedium } from 'lucide-react';
 
-export default function BatteryCard({ batteryLevel }) {
+export default function BatteryCard({ batteryLevel }: { batteryLevel: number }) {
   const levelStr = Math.round(batteryLevel);
 
   return (

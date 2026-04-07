@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { useCost } from '../../hooks/useCost';
 import { CircleDollarSign } from 'lucide-react';
 
-export default function CostCard({ chartData }) {
-  const [tariff, setTariff] = useState(7.20);
+export default function CostCard({ chartData }: { chartData: number[] }) {
+  const [tariff, setTariff] = useState<number | string>(7.20);
   const totalCost = useCost(chartData, tariff);
-  const isInvalid = isNaN(tariff) || tariff <= 0;
+  const isInvalid = isNaN(Number(tariff)) || Number(tariff) <= 0;
 
   return (
     <section className="group col-span-12 md:col-span-6 bg-ev-card rounded-2xl p-6 h-40 flex flex-col shadow-lg hover:shadow-ev-accent/10 hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-ev-accent/30">

@@ -7,7 +7,7 @@ import {
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Filler);
 
-export default function Statistic({ chartData, batteryData, regenerateChart, regenerateBattery }) {
+export default function Statistic({ chartData, batteryData, regenerateChart, regenerateBattery }: { chartData: number[]; batteryData: number[]; regenerateChart: () => void; regenerateBattery: () => void; }) {
   const currentHour = new Date().getHours();
 
   const labels = useMemo(() => {

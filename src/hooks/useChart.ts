@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 
-function generateBatteryCurve() {
-  const data = [];
+function generateBatteryCurve(): number[] {
+  const data: number[] = [];
   const startLevel = 5 + Math.random() * 10; 
   const endLevel = startLevel + 40 + Math.random() * 40; 
   for (let i = 0; i < 12; i++) {
@@ -13,10 +13,16 @@ function generateBatteryCurve() {
   return data;
 }
 
+interface SensorState {
+  powerData: number[];
+  batteryData: number[];
+  baseLastPower: number;
+}
+
 export function useChart() {
-  const [sensorState, setSensorState] = useState(() => {
-    const storedPower = JSON.parse(sessionStorage.getItem('ev_chart_data_v2'));
-    const storedBattery = JSON.parse(sessionStorage.getItem('ev_battery_data_v1'));
+  const [sensorState, setSensorState] = useState<SensorState>(() => {
+    const storedPower: number[] | null = JSON.parse(sessionStorage.getItem('ev_chart_data_v2') || 'null');
+    const storedBattery: number[] | null = JSON.parse(sessionStorage.getItem('ev_battery_data_v1') || 'null');
 
     const initialPower = (storedPower && storedPower.length === 12) 
       ? storedPower 

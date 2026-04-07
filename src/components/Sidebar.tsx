@@ -10,7 +10,7 @@ import {
   Settings
 } from 'lucide-react';
 
-export default function Sidebar({ isOpen, onClose }) {
+export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const { isDark, toggleTheme } = useTheme();
   const location = useLocation();
 

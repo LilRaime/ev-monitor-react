@@ -7,7 +7,7 @@ import Statistic from './pages/Statistic';
 import { useChart } from './hooks/useChart';
 
 export default function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const { chartData, batteryData, regenerate, regenerateBattery } = useChart();
 
   return (

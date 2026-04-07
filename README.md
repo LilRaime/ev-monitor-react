@@ -2,7 +2,7 @@
 
 A dashboard for monitoring electric vehicle charging
 
-Built with **HTML**, **Tailwind CSS**, and **JavaScript**. Supports dark and light themes.
+Built with **React** **TypeScript** and **Tailwind CSS**. Supports dark and light themes.
 
 ## Launch
 ```bash
@@ -16,14 +16,10 @@ npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 
-### For dev
+### Run
 ```bash
-npm run dev
-```
-
-### For prod
-```bash
-npm run build
+npm run dev   # for dev
+npm run build # for prod
 ```
 
 ## Screenshots

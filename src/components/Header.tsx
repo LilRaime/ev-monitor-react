@@ -2,7 +2,7 @@ import { useClock } from '../hooks/useClock';
 import { useLocation } from 'react-router-dom';
 import { Menu, CalendarCheck, User } from 'lucide-react';
 
-export default function Header({ onOpenSidebar }) {
+export default function Header({ onOpenSidebar }: { onOpenSidebar: () => void }) {
   const clockText = useClock();
   const location = useLocation();
 

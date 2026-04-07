@@ -4,7 +4,7 @@ import CostCard from '../components/cards/CostCard';
 import ChargingCard from '../components/cards/ChargingCard';
 import ChartCard from '../components/cards/ChartCard';
 
-export default function Dashboard({ chartData, batteryData }) {
+export default function Dashboard({ chartData, batteryData }: { chartData: number[]; batteryData: number[] }) {
   const currentPower = chartData[chartData.length - 1];
   const currentBattery = batteryData[batteryData.length - 1];
 

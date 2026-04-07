@@ -1,6 +1,11 @@
 import { Leaf, PlugZap } from 'lucide-react';
 
-export default function ChargingCard({ currentPower, batteryLevel }) {
+interface ChargingCardProps {
+  currentPower: number;
+  batteryLevel: number;
+}
+
+export default function ChargingCard({ currentPower, batteryLevel }: ChargingCardProps) {
   const batteryCapacityKWh = 75;
   const remainingKwh = (batteryCapacityKWh * batteryLevel) / 100;
   const neededKwh = batteryCapacityKWh - remainingKwh;

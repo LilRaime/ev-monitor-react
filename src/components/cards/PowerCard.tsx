@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react'
 import { Zap } from 'lucide-react';
 
-export default function PowerCard({ currentPower }) {
+export default function PowerCard({ currentPower }: { currentPower: number }) {
   return (
     <section className="group col-span-12 sm:col-span-6 md:col-span-3 bg-ev-card rounded-2xl p-6 h-40 flex flex-col justify-between shadow-lg hover:shadow-ev-accent/20 hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-ev-accent/30">
       
