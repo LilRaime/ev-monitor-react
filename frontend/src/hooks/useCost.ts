@@ -3,10 +3,11 @@ import { useMemo } from 'react';
 export function useCost(chartData: number[], tariff: number | string): number {
   return useMemo(() => {
     const parsedTariff = typeof tariff === 'string' ? parseFloat(tariff) : tariff;
-    if (isNaN(parsedTariff) || parsedTariff <= 0) return 0;
-    
+    if (isNaN(parsedTariff) || parsedTariff <= 0)
+      return 0;
+
     const avgPower = chartData.reduce((sum, v) => sum + v, 0) / chartData.length;
-    const energyKwh = (avgPower * chartData.length) / 60; 
+    const energyKwh = (avgPower * chartData.length) / 60;
     return energyKwh * parsedTariff;
   }, [chartData, tariff]);
 }
