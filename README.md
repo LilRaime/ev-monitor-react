@@ -8,9 +8,7 @@ Built with **React (Vite)**, **TypeScript**, and **Tailwind CSS** on the fronten
 ```bash
 git clone https://github.com/LilRaime/ev-monitor-react.git
 cd ev-monitor-react
-```
 
-```bash
 cp .env.example .env # Create .env file
 ```
 
