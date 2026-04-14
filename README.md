@@ -2,7 +2,7 @@
 
 A dashboard for monitoring electric vehicle charging
 
-Built with **React** **TypeScript** and **Tailwind CSS**. Supports dark and light themes.
+Built with **React (Vite)**, **TypeScript**, and **Tailwind CSS** on the frontend, powered by a **Node.js** backend, and fully containerized using **Docker** for seamless deployment. Supports both dark and light themes.
 
 ## Launch
 ```bash
@@ -11,15 +11,14 @@ cd ev-monitor-react
 ```
 
 ```bash
-npm install
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
+cp .env.example .env # Create .env file
 ```
+
+The dashboard will be available at http://localhost:5173 and the API at http://localhost:3000/api/status.
 
 ### Run
 ```bash
-npm run dev   # for dev
-npm run build # for prod
+docker-compose up --build -d
 ```
 
 ## Screenshots
